@@ -62,6 +62,7 @@ const quotes = [
               </p>`
      }
      else if (getQuote.citation && getQuote.year) {
+        resultRandomQuote = 
         `<p class="quote">${getQuote.quote}</p>  
            <p class="source">${getQuote.source}        
               <span class="citation">${getQuote.citation}</span>
