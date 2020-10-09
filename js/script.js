@@ -42,23 +42,37 @@ const quotes = [
     function printQuote(){
      // This varaible holds the result of getRandomQuote function
         let getQuote = getRandomQuote(); 
-
+         
+        let resultRandomQuote;
                 
-       // Conditional statement to display object properties   
+       // Conditional statement to display object properties
+          
        if (getQuote.citation ){
-        let resultRandomQuote = 
+         resultRandomQuote = 
         `<p class="quote">${getQuote.quote}</p>  
            <p class="source">${getQuote.source}        
               <span class="citation">${getQuote.citation}</span>
               </p>`
      }
-      if (getQuote.year ){
+      else if (getQuote.year ){
         resultRandomQuote = 
         `<p class="quote">${getQuote.quote}</p>  
            <p class="source">${getQuote.source}        
               <span class="year">${getQuote.year}</span>
               </p>`
      }
+     else if (getQuote.citation && getQuote.year) {
+        `<p class="quote">${getQuote.quote}</p>  
+           <p class="source">${getQuote.source}        
+              <span class="citation">${getQuote.citation}</span>
+              <span class="year">${getQuote.year}</span>
+              </p>`
+     }
+        else {resultRandomQuote = 
+            `<p class="quote">${getQuote.quote}</p>  
+                  <p class="source">${getQuote.source} </p>`
+        }
+
      
      document.getElementById('quote-box').innerHTML = resultRandomQuote;
      
